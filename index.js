@@ -1,27 +1,16 @@
 import express from "express";
 import cors from "cors";
-import mongoose from "mongoose";
-//import getDrivers from './drivers.js';
-//import getNewss from "./teams.js";
-//import getDates from "./raceDates.js";
 import * as cheerio from "cheerio";
 import fetch from "node-fetch";
+import dotenv from "dotenv";
 
 const app = express();
-const PORT = 8000 || 5000;
-const URL =
-  "mongodb+srv://oloo:oloo@quotes.brpwvom.mongodb.net/?retryWrites=true&w=majority";
+dotenv.config();
 app.use(cors());
 app.use(express.json());
 
-mongoose
-  .connect(URL)
-  .then(() => {
-    console.log("Mongo DB Connection Successful");
-  })
-  .catch((error) => {
-    console.error({ message: error.message });
-  });
+const PORT = process.env.PORT || 5000;
+const URL = process.env.MONGO_URI;
 
 app.get("/api", (req, res) => {
   try {
@@ -108,7 +97,7 @@ app.get("/api/races", async (req, res) => {
   try {
     const dates = [];
     const response = await fetch(
-      "https://www.formula1.com/en/racing/2023.html"
+      "https://www.formula1.com/en/racing/2024.html"
     );
     const body = await response.text();
 
