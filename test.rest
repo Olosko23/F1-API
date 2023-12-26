@@ -1,0 +1,11 @@
+
+GET http://localhost:8000/api
+
+###
+GET http://localhost:8000/api/teams
+
+###
+GET http://localhost:8000/api/races
+
+###
+GET http://localhost:8000/api/drivers
