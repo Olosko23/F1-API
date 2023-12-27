@@ -7,3 +7,6 @@ Races live at https://f1-z1ad.onrender.com/api/races
 Drivers  live at https://f1-z1ad.onrender.com/api/drivers
 <br />
 Teams live at https://f1-z1ad.onrender.com/api/teams
+<hr />
+
+https://rapidapi.com/oloogeorge633/api/f1-data2
